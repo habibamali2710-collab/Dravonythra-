@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Last Chance</title>
 
+<style>
+body{
+margin:0;
+background:#000;
+color:#00ff88;
+font-family:monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+#text{
+width:90%;
+max-width:800px;
+font-size:20px;
+line-height:1.8;
+white-space:pre-wrap;
+}
+
+.cursor{
+display:inline-block;
+width:10px;
+background:#00ff88;
+animation:blink .8s infinite;
+}
+
+@keyframes blink{
+50%{opacity:0;}
+}
+</style>
+
+</head>
+<body>
+
+<div id="text"></div>
+
+<script>
+
+const message=`WELCOME, ABDULRAHMAN...
+
+If you are reading this...
+
+then you accepted the challenge.
+
+This isn't a normal website.
+
+Everything here was made for one person...
+
+You.
+
+Every sentence...
+Every detail...
+Every second...
+
+Keep going...
+
+This is only the beginning...`;
+
+let i=0;
+
+function type(){
+
+if(i<message.length){
+
+document.getElementById("text").innerHTML=
+message.substring(0,i)+"<span class='cursor'></span>";
+
+i++;
+
+setTimeout(type,40);
+
+}else{
+
+document.getElementById("text").innerHTML=message;
+
+}
+
+}
+
+type();
+
+</script>
+
+</body>
+</html>

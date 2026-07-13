@@ -20,8 +20,8 @@ overflow:hidden;
 
 #text{
 width:90%;
-max-width:850px;
-font-size:20px;
+max-width:900px;
+font-size:22px;
 line-height:2;
 white-space:pre-wrap;
 }
@@ -37,6 +37,7 @@ animation:blink .8s infinite;
 50%{opacity:0;}
 }
 </style>
+
 </head>
 
 <body>
@@ -44,8 +45,8 @@ animation:blink .8s infinite;
 <div id="text"></div>
 
 <script>
-const message = `
-WELCOME,
+
+const message = `WELCOME,
 مرحبًا،
 
 ABDULRAHMAN.
@@ -59,6 +60,40 @@ Initializing...
 
 Loading Archive...
 جارٍ تحميل الأرشيف...
-`;const message = `
-...
-`;
+
+If you are reading this...
+إذا كنت تقرأ هذا...
+
+Then you accepted the challenge.
+فقد قبلت التحدي.
+
+This is only the beginning...
+هذه مجرد البداية...`;
+
+let i = 0;
+
+function type(){
+
+if(i < message.length){
+
+document.getElementById("text").innerHTML =
+message.substring(0,i) + "<span class='cursor'></span>";
+
+i++;
+
+setTimeout(type,40);
+
+}else{
+
+document.getElementById("text").innerHTML = message;
+
+}
+
+}
+
+type();
+
+</script>
+
+</body>
+</html>

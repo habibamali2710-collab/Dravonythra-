@@ -6,129 +6,59 @@
 <title>Dravonythra</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
 body{
+margin:0;
 background:#000;
 color:#00ff88;
-font-family:Consolas,monospace;
+font-family:monospace;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 overflow:hidden;
 }
 
-#terminal{
-padding:40px;
-width:100%;
-height:100vh;
-}
-
-.en{
-color:#ffffff;
-font-size:23px;
-margin-top:15px;
-}
-
-.ar{
-color:#66ffb3;
-font-size:18px;
-margin-bottom:20px;
-direction:rtl;
+#text{
+width:90%;
+max-width:850px;
+font-size:20px;
+line-height:2;
+white-space:pre-wrap;
 }
 
 .cursor{
 display:inline-block;
-width:8px;
+width:10px;
 background:#00ff88;
 animation:blink .8s infinite;
 }
 
 @keyframes blink{
-50%{
-opacity:0;
+50%{opacity:0;}
 }
-}
-
 </style>
-
 </head>
 
 <body>
 
-<div id="terminal"></div>
+<div id="text"></div>
 
 <script>
+const message = `
+WELCOME,
+مرحبًا،
 
-const terminal=document.getElementById("terminal");
+ABDULRAHMAN.
+عبدالرحمن.
 
-const lines=[
+Identity Confirmed.
+تم تأكيد الهوية.
 
-["Initializing...","جارٍ التهيئة..."],
+Initializing...
+جارٍ التهيئة...
 
-["Establishing Secure Connection...","جارٍ إنشاء اتصال آمن..."],
-
-["Identity Scan...","جارٍ فحص الهوية..."],
-
-["WELCOME, ABDULRAHMAN.","مرحبًا يا عبدالرحمن."],
-
-["This is not a normal website.","هذا ليس موقعًا عاديًا."],
-
-["Everything starts now...","كل شيء يبدأ الآن..."]
-
-];
-
-let current=0;
-
-async function sleep(ms){
-return new Promise(r=>setTimeout(r,ms));
-}
-
-async function type(text,element){
-
-for(let i=0;i<=text.length;i++){
-
-element.innerHTML=text.substring(0,i)+"<span class='cursor'></span>";
-
-await sleep(35);
-
-}
-
-element.innerHTML=text;
-
-}
-
-async function run(){
-
-while(current<lines.length){
-
-const en=document.createElement("div");
-en.className="en";
-
-terminal.appendChild(en);
-
-await type(lines[current][0],en);
-
-const ar=document.createElement("div");
-ar.className="ar";
-
-terminal.appendChild(ar);
-
-await type(lines[current][1],ar);
-
-await sleep(500);
-
-current++;
-
-}
-
-}
-
-run();
-
-</script>
-
-</body>
-</html>
+Loading Archive...
+جارٍ تحميل الأرشيف...
+`;const message = `
+...
+`;

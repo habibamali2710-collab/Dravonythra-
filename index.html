@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+⁸<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -85,7 +85,13 @@ setTimeout(type,40);
 
 }else{
 
-document.getElementById("text").innerHTML = message;
+document.getElementById("text").innerHTML =
+message +
+"<br><br><button id='enter'>ENTER<br>دخول</button>";
+
+document.getElementById("enter").onclick = function(){
+window.location.href = "page2.html";
+};
 
 }
 
